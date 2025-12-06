@@ -1,0 +1,43 @@
+PRESCRIPTION
+=========================================
+
+Date: December 1, 2025
+DEA#: AB1234567
+
+Patient: Robert Chen
+DOB: 08/22/1968
+Address: 123 Main Street, Anytown, ST 12345
+
+Rx1: METFORMIN HCL 500MG TABLETS
+     Sig: Take 1 tablet by mouth twice daily with meals
+     Disp: #60 tablets
+     Refills: 5
+
+Rx2: LISINOPRIL 10MG TABLETS  
+     Sig: Take 1 tablet by mouth once daily
+     Disp: #30 tablets
+     Refills: 5
+
+Rx3: ATORVASTATIN 20MG TABLETS
+     Sig: Take 1 tablet by mouth at bedtime
+     Disp: #30 tablets
+     Refills: 5
+
+DIAGNOSIS CODES:
+- E11.9 - Type 2 Diabetes Mellitus
+- I10 - Essential Hypertension
+- E78.5 - Hyperlipidemia
+
+PRESCRIBER:
+Dr. Jennifer Williams, MD
+Internal Medicine
+License #: MD0012345
+Phone: (555) 123-4567
+
+===================================
+PHARMACY INSTRUCTIONS:
+Generic substitution permitted unless 
+"Dispense as Written" is initialed.
+
+---
+This prescription is for demonstration and testing purposes only.

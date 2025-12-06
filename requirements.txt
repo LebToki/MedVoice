@@ -1,0 +1,27 @@
+# MedVoice Companion - Dependencies
+
+# FastAPI web framework
+fastapi>=0.104.1
+uvicorn[standard]>=0.24.0
+
+# Gemini API
+google-generativeai>=0.8.0
+
+# File handling
+python-multipart>=0.0.6
+python-dotenv>=1.0.0
+aiofiles>=23.2.1
+
+# PDF processing (optional)
+PyPDF2>=3.0.1
+
+# Image processing
+Pillow>=10.0.0
+
+# Data validation
+pydantic>=2.5.0
+
+# Utilities
+httpx>=0.25.0
+
+# Note: TTS uses Gemini API native audio (no extra dependency needed)

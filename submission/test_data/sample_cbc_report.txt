@@ -1,0 +1,41 @@
+COMPLETE BLOOD COUNT (CBC) REPORT
+===================================
+
+Patient: John Smith
+Date: November 28, 2025
+Ordering Physician: Dr. Sarah Johnson
+
+TEST RESULTS:
+-----------------------------------------------------------------------------
+Test Name              Result      Units       Reference Range     Status
+-----------------------------------------------------------------------------
+White Blood Cells      11.5        K/uL        4.5 - 11.0          HIGH
+Red Blood Cells        4.85        M/uL        4.50 - 5.90         NORMAL
+Hemoglobin             14.2        g/dL        13.5 - 17.5         NORMAL
+Hematocrit             42.1        %           38.0 - 50.0         NORMAL
+Platelet Count         245         K/uL        150 - 400           NORMAL
+Mean Cell Volume       86.8        fL          80.0 - 100.0        NORMAL
+MCH                    29.3        pg          27.0 - 33.0         NORMAL
+MCHC                   33.7        g/dL        32.0 - 36.0         NORMAL
+RDW                    13.2        %           11.5 - 14.5         NORMAL
+
+DIFFERENTIAL:
+Neutrophils            72          %           40 - 70             HIGH
+Lymphocytes            18          %           20 - 40             LOW
+Monocytes              7           %           2 - 8               NORMAL
+Eosinophils            2           %           1 - 4               NORMAL
+Basophils              1           %           0 - 2               NORMAL
+
+INTERPRETATION:
+- Mild leukocytosis with elevated WBC count
+- Neutrophilia may indicate acute infection or inflammation
+- Slightly decreased lymphocyte percentage
+- Red cell indices within normal limits
+- Platelet count adequate for hemostasis
+
+RECOMMENDATION:
+Follow up recommended. If symptoms of infection present, consider 
+appropriate clinical evaluation and management.
+
+---
+This report is for demonstration and testing purposes only.

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MedVoice Companion - AI-powered medical document analysis with voice explanations">
+    <meta name="theme-color" content="#0f172a">
+    
+    <title>MedVoice Companion | Your AI Health Assistant</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>MedVoice</span>
+            </div>
+            <nav class="header-nav">
+                <button class="btn-icon" id="accessibilityBtn" title="Accessibility Settings">
+                    <i class="fas fa-universal-access"></i>
+                </button>
+                <button class="btn-icon" id="settingsBtn" title="Settings">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section" id="heroSection">
+                <div class="hero-content">
+                    <h1>Understand Your Health,<br><span class="gradient-text">Simply Explained</span></h1>
+                    <p class="hero-subtitle">Upload medical documents and get clear, voice-powered explanations</p>
+                    
+                    <!-- Quick Actions -->
+                    <div class="quick-actions">
+                        <button class="action-card" data-action="upload">
+                            <div class="action-icon">
+                                <i class="fas fa-file-medical"></i>
+                            </div>
+                            <span>Upload Document</span>
+                        </button>
+                        <button class="action-card" data-action="camera">
+                            <div class="action-icon">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <span>Take Photo</span>
+                        </button>
+                        <button class="action-card" data-action="voice">
+                            <div class="action-icon">
+                                <i class="fas fa-microphone"></i>
+                            </div>
+                            <span>Ask Question</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Upload Section -->
+            <section class="upload-section glass-card" id="uploadSection">
+                <div class="upload-header">
+                    <h2><i class="fas fa-cloud-upload-alt"></i> Upload Medical Document</h2>
+                    <button class="btn-close" id="closeUpload">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="upload-area" id="dropZone">
+                    <input type="file" id="fileInput" accept="image/*,.pdf" hidden>
+                    <div class="upload-placeholder">
+                        <i class="fas fa-file-medical-alt"></i>
+                        <p>Drag & drop your medical document here</p>
+                        <span>or click to browse</span>
+                    </div>
+                    <div class="file-preview" id="filePreview" hidden>
+                        <img id="previewImage" alt="Document preview">
+                        <div class="file-info">
+                            <span id="fileName"></span>
+                            <button class="btn-remove" id="removeFile">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="upload-options">
+                    <div class="option-group">
+                        <label for="documentType">Document Type</label>
+                        <select id="documentType">
+                            <option value="general">Auto Detect</option>
+                            <option value="lab_result">Lab Results</option>
+                            <option value="prescription">Prescription</option>
+                            <option value="medical_report">Medical Report</option>
+                            <option value="imaging">Imaging/X-Ray</option>
+                        </select>
+                    </div>
+                    <div class="option-group">
+                        <label for="language">Explanation Language</label>
+                        <select id="language">
+                            <option value="en">English</option>
+                            <option value="es">Español</option>
+                            <option value="fr">Français</option>
+                            <option value="ar">العربية</option>
+                            <option value="zh">中文</option>
+                        </select>
+                    </div>
+                    <div class="option-group">
+                        <label for="simplifyLevel">Simplicity Level</label>
+                        <select id="simplifyLevel">
+                            <option value="1">Technical</option>
+                            <option value="2" selected>Simple</option>
+                            <option value="3">Very Simple</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button class="btn-primary btn-analyze" id="analyzeBtn" disabled>
+                    <i class="fas fa-magic"></i>
+                    <span>Analyze Document</span>
+                </button>
+            </section>
+
+            <!-- Text Input Section -->
+            <section class="text-section glass-card" id="textSection" hidden>
+                <div class="section-header">
+                    <h2><i class="fas fa-paste"></i> Paste Medical Text</h2>
+                    <button class="btn-close" id="closeText">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <textarea 
+                    id="textInput" 
+                    placeholder="Paste your lab results, prescription, or medical notes here..."
+                    rows="8"
+                ></textarea>
+                
+                <div class="upload-options">
+                    <div class="option-group">
+                        <label for="textDocType">Document Type</label>
+                        <select id="textDocType">
+                            <option value="general">Auto Detect</option>
+                            <option value="lab_result">Lab Results</option>
+                            <option value="prescription">Prescription</option>
+                            <option value="medical_report">Medical Report</option>
+                        </select>
+                    </div>
+                    <div class="option-group">
+                        <label for="textLanguage">Language</label>
+                        <select id="textLanguage">
+                            <option value="en">English</option>
+                            <option value="es">Español</option>
+                            <option value="fr">Français</option>
+                            <option value="ar">العربية</option>
+                            <option value="zh">中文</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button class="btn-primary" id="analyzeTextBtn">
+                    <i class="fas fa-magic"></i>
+                    <span>Analyze Text</span>
+                </button>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section glass-card" id="resultsSection" hidden>
+                <div class="results-header">
+                    <h2><i class="fas fa-file-medical-alt"></i> Analysis Results</h2>
+                    <div class="results-actions">
+                        <button class="btn-icon" id="speakBtn" title="Read Aloud">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                        <button class="btn-icon" id="pauseBtn" title="Pause" hidden>
+                            <i class="fas fa-pause"></i>
+                        </button>
+                        <button class="btn-icon" id="copyBtn" title="Copy">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                        <button class="btn-icon" id="shareBtn" title="Share">
+                            <i class="fas fa-share-alt"></i>
+                        </button>
+                        <button class="btn-close" id="closeResults">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Summary Card -->
+                <div class="result-card summary-card">
+                    <h3><i class="fas fa-clipboard-list"></i> Summary</h3>
+                    <p id="resultSummary"></p>
+                </div>
+
+                <!-- Warnings Card -->
+                <div class="result-card warning-card" id="warningCard" hidden>
+                    <h3><i class="fas fa-exclamation-triangle"></i> Important Alerts</h3>
+                    <ul id="warningList"></ul>
+                </div>
+
+                <!-- Lab Values Card -->
+                <div class="result-card lab-card" id="labCard" hidden>
+                    <h3><i class="fas fa-flask"></i> Lab Values</h3>
+                    <div class="lab-values-grid" id="labValuesGrid"></div>
+                </div>
+
+                <!-- Explanation Card -->
+                <div class="result-card explanation-card">
+                    <h3><i class="fas fa-book-medical"></i> Detailed Explanation</h3>
+                    <div id="resultExplanation"></div>
+                </div>
+
+                <!-- Key Points Card -->
+                <div class="result-card keypoints-card">
+                    <h3><i class="fas fa-star"></i> Key Points</h3>
+                    <ul id="keyPointsList"></ul>
+                </div>
+
+                <!-- Next Steps Card -->
+                <div class="result-card nextsteps-card">
+                    <h3><i class="fas fa-tasks"></i> Recommended Next Steps</h3>
+                    <ul id="nextStepsList"></ul>
+                </div>
+
+                <!-- Follow-up Questions -->
+                <div class="follow-up-section">
+                    <h3><i class="fas fa-question-circle"></i> Have Questions?</h3>
+                    <div class="question-input-wrapper">
+                        <input 
+                            type="text" 
+                            id="questionInput" 
+                            placeholder="Ask a follow-up question..."
+                        >
+                        <button class="btn-send" id="askBtn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <button class="btn-mic" id="voiceQuestionBtn">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Voice Assistant Section -->
+            <section class="voice-section glass-card" id="voiceSection" hidden>
+                <div class="voice-header">
+                    <h2><i class="fas fa-microphone-alt"></i> Voice Assistant</h2>
+                    <button class="btn-close" id="closeVoice">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="voice-visualizer">
+                    <div class="voice-circle" id="voiceCircle">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <p class="voice-status" id="voiceStatus">Tap to start speaking</p>
+                </div>
+                
+                <div class="voice-transcript" id="voiceTranscript" hidden>
+                    <p id="transcriptText"></p>
+                </div>
+                
+                <div class="voice-response" id="voiceResponse" hidden>
+                    <div class="response-content" id="responseContent"></div>
+                    <button class="btn-primary" id="speakResponse">
+                        <i class="fas fa-volume-up"></i> Listen to Answer
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loadingOverlay" hidden>
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <p id="loadingText">Analyzing your document...</p>
+            </div>
+        </div>
+
+        <!-- Accessibility Panel -->
+        <div class="accessibility-panel glass-card" id="accessibilityPanel" hidden>
+            <h3>Accessibility Settings</h3>
+            <div class="accessibility-options">
+                <label class="toggle-option">
+                    <span>High Contrast Mode</span>
+                    <input type="checkbox" id="highContrastToggle">
+                    <span class="toggle-slider"></span>
+                </label>
+                <label class="toggle-option">
+                    <span>Large Text</span>
+                    <input type="checkbox" id="largeTextToggle">
+                    <span class="toggle-slider"></span>
+                </label>
+                <label class="toggle-option">
+                    <span>Auto-Read Results</span>
+                    <input type="checkbox" id="autoReadToggle" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+                <div class="option-group">
+                    <label for="speechRate">Speech Speed</label>
+                    <input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9">
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Panel -->
+        <div class="settings-panel glass-card" id="settingsPanel" hidden>
+            <h3>Settings</h3>
+            <div class="settings-options">
+                <div class="option-group">
+                    <label for="defaultLanguage">Default Language</label>
+                    <select id="defaultLanguage">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                        <option value="ar">العربية</option>
+                        <option value="zh">中文</option>
+                    </select>
+                </div>
+                <div class="option-group">
+                    <label for="defaultSimplicity">Default Simplicity</label>
+                    <select id="defaultSimplicity">
+                        <option value="1">Technical</option>
+                        <option value="2" selected>Simple</option>
+                        <option value="3">Very Simple</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toast Notifications -->
+        <div class="toast-container" id="toastContainer"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/app.js"></script>
+</body>
+</html>

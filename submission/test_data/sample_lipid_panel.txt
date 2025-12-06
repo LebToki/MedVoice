@@ -1,0 +1,38 @@
+LIPID PANEL RESULTS
+===========================================
+
+Patient: Maria Garcia  
+DOB: 03/15/1975
+Collection Date: November 30, 2025
+Fasting: Yes (12 hours)
+
+LIPID PROFILE
+-----------------------------------------------------------------------------
+Analyte                    Result      Units      Reference Range    Flag
+-----------------------------------------------------------------------------
+Total Cholesterol          248         mg/dL      < 200              HIGH
+LDL Cholesterol            165         mg/dL      < 100              HIGH  
+HDL Cholesterol            42          mg/dL      > 40               BORDERLINE
+Triglycerides              205         mg/dL      < 150              HIGH
+VLDL Cholesterol           41          mg/dL      < 30               HIGH
+Total Cholesterol/HDL      5.9         ratio      < 4.5              HIGH
+LDL/HDL Ratio              3.9         ratio      < 3.0              HIGH
+
+CARDIOVASCULAR RISK ASSESSMENT:
+--------------------------------
+10-Year ASCVD Risk Score: 12.5% (Intermediate Risk)
+
+CLINICAL NOTES:
+- Elevated LDL cholesterol significantly above optimal range
+- Triglycerides elevated - consider dietary modifications
+- HDL at lower limit - lifestyle changes may help increase
+- Overall lipid profile indicates increased cardiovascular risk
+
+RECOMMENDATIONS:
+1. Therapeutic lifestyle changes (diet, exercise)
+2. Consider statin therapy per clinical guidelines
+3. Repeat lipid panel in 3-6 months
+4. Blood pressure and glucose monitoring advised
+
+---
+This report is for demonstration and testing purposes only.
