@@ -17,6 +17,15 @@ Millions of patients struggle to understand their medical reports, lab results, 
 - 👴 **Assist** elderly and visually impaired users via voice
 - 🌍 **Translate** explanations to multiple languages
 
+
+## Screenshots
+<img width="1920" height="869" alt="main_app" src="https://github.com/user-attachments/assets/b6243ede-6245-43f5-bf1f-ab6fa4ba57eb" />
+<img width="1920" height="869" alt="upload_section" src="https://github.com/user-attachments/assets/96146ea6-e44f-472d-ae2f-31c26ac1dadb" />
+<img width="1920" height="869" alt="hero_section" src="https://github.com/user-attachments/assets/1d4a72eb-fd18-49f9-8064-ad44606937fa" />
+<img width="1920" height="869" alt="analysis_results" src="https://github.com/user-attachments/assets/34c8550b-f81a-4188-887f-a086acb80db5" />
+
+
+
 ## 🚀 Quick Start
 
 ### Prerequisites
