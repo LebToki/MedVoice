@@ -97,4 +97,4 @@ MIT License - See [LICENSE](LICENSE) for details.
 
 ---
 
-**Built with ❤️ for the Gemini 3 Vibe Coding Hackathon**
+**Built with ❤️ for the Gemini 3 Vibe Coding Hackathon by Tarek Tarabichi from 2TInteractive.com**
