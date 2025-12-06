@@ -40,7 +40,13 @@ submission/
 | **Creativity**      | 20%    | Novel use of multimodality   |
 | **Presentation**    | 10%    | Video quality & storytelling |
 
+## 🔗 Submission Links
+
+- **AI Studio App:** [MedVoice Companion](https://ai.studio/apps/drive/1VnTRbWFq12qAXy89U6L373O05eIjYh7-)
+- **GitHub Repo:** [LebToki/MedVoice](https://github.com/LebToki/MedVoice)
+
 ## 📝 Quick Links
+
 
 - [Competition Page](https://kaggle.com/competitions/gemini-3)
 - [AI Studio Build](https://aistudio.google.com/)

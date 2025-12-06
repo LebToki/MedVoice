@@ -63,11 +63,11 @@ MedVoice Companion empowers patients to understand their health, reducing anxiet
 
 ## Project Links
 
-| Link Type         | URL                         |
-|-------------------|-----------------------------|
-| **AI Studio App** | `[PASTE AI STUDIO LINK]`    |
-| **Demo Video**    | `[PASTE YOUTUBE/LOOM LINK]` |
-| **GitHub Repo**   | `[OPTIONAL]`                |
+| Link Type         | URL                                                              |
+|-------------------|------------------------------------------------------------------|
+| **AI Studio App** | `https://ai.studio/apps/drive/1VnTRbWFq12qAXy89U6L373O05eIjYh7-` |
+| **Demo Video**    | `[PASTE YOUTUBE/LOOM LINK]`                                      |
+| **GitHub Repo**   | `https://github.com/LebToki/MedVoice`                            |
 
 ---
 
